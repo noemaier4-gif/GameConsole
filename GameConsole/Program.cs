@@ -7,7 +7,7 @@ namespace GameConsole
         static void Main(string[] args)
         {
             List<IGamePlay> games = new List<IGamePlay>();
-            games.Add(new Games.Pong());
+            games.Add(new Games.TetrisGame());
             games.Add(new Games.FluffyBirdGame());
             games.Add(new Games.PacManGame());
 
