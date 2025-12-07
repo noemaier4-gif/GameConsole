@@ -1,4 +1,4 @@
-using GameConsole.Base;
+using GameConsole.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,17 +7,23 @@ using System.Threading.Tasks;
 
 namespace GameConsole.Pages
 {
-    public class RegisterScreen : Screen
+    internal class GameScreen: Base.Screen
     {
-        public RegisterScreen() : base("REGISTER PAGE")
+        private IGamePlay game;
+
+        public GameScreen(IGamePlay g) : base(g.Name)
         {
+            game = g;
         }
 
         public override void Show()
         {
             base.Show();
-            CenterText("Enter Your Desired Details");
+            CenterText($"Starting {game.Name}...");
+            game.Play();
+            
             Console.ReadKey();
         }
+
     }
 }

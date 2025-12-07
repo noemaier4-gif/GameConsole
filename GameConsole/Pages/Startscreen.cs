@@ -4,20 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace GameConsole.Pages
 {
-    public class RegisterScreen : Screen
+    public class StartScreen : Screen
     {
-        public RegisterScreen() : base("REGISTER PAGE")
+        public StartScreen() : base("WELCOME TO FIRST PAGE!")
         {
+            Show();
         }
 
         public override void Show()
         {
             base.Show();
-            CenterText("Enter Your Desired Details");
+
+            String bob = "WELCOME YA MELEH";
+            CenterText(bob);
+
             Console.ReadKey();
+
+            Screen next = new MainMenu();
+            next.Show();
         }
     }
+
+    
 }
